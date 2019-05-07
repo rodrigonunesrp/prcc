@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+
+<% 100.times do |n| %>
+user_<%= n %>
+  name: <%= "MyString#{n.to_s}" %>
+  cpf: <%= rand(999999).to_s + n.to_s %>
+  email: <%= "MyString#{n}@test.com" %>
+<% end %>

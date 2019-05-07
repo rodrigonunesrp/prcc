@@ -1,0 +1,35 @@
+= simple_form_for(user, as: :user, url: v1_users_path ) do |f|
+    - unless f.error_notification.blank?
+        .alert.alert-danger role="alert"
+            = f.error_notification
+    h4
+        | Cliente
+    hr.mt-1
+    = f.input :name, required: true
+    = f.input :cpf, required: true
+    = f.input :email
+    
+    h4.mt-5
+        | Assinatura
+    hr.mt-1
+    = f.simple_fields_for :orders do |of|
+        = of.input :model, required: true
+        = of.input :imei, required: true
+        = of.input :anual_price, required: true
+        = of.input :payment_number_of_quotas
+
+    = f.submit 'Criar Usuário', id: 'user_submit', class: "btn btn-primary mt-5 mb-5"
+
+/! Modals
+/! Modal: modalCookie
+#modalCookie.modal.fade.top aria-hidden="true" aria-labelledby="myModalLabel" data-backdrop="true" role="dialog" tabindex="-1" 
+  .modal-dialog.modal-frame.modal-top.modal-notify.modal-info role="document" 
+    /! Content
+    .modal-content
+      /! Body
+      .modal-body
+        .row.d-flex.justify-content-center.align-items-center
+          p#modalCookieBodyText.pt-3.pr-2 
+          a.btn.btn-outline-primary.waves-effect data-dismiss="modal" type="button"  Ok
+    /! /.Content
+/! Modal: modalCookie

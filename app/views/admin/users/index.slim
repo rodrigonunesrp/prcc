@@ -1,0 +1,49 @@
+h2.mt-5  
+    | Listando Clientes
+- if @users.blank?
+    h4.mt-5
+        .alert.alert-light role="alert"
+            | Não há usuários para exibir
+            p.mt-3
+                = link_to "Adicione um agora", new_admin_user_path, class: "btn btn-primary"
+- else
+    p.mt-5
+        table.table
+            thead
+                tr
+                    th scope="col"
+                        | ID
+                    th 
+                        | Nome
+                    th 
+                        | CPF
+                    th
+                        | Email
+                    th 
+                        | Modelo
+                    th 
+                        | IMEI
+                    th
+                        | Preço Anual
+                    th
+                        | Qtd. Parcelas
+            tbody
+                - @users.each do |user|
+                    tr
+                        th scope="row"
+                            = user.id
+                        td 
+                            = user.name
+                        td 
+                            = user.cpf
+                        td 
+                            = user.email
+                        td 
+                            = user.orders.first.model
+                        td 
+                            = user.orders.first.imei
+                        td 
+                            = user.orders.first.anual_price
+                        td 
+                            = user.orders.first.payment_number_of_quotas
+

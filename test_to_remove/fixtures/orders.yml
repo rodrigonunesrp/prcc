@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: MyString
+  imei: 1
+  anual_price: 9.99
+  payment_number_of_quotas: 1
+  user: one
+
+two:
+  model: MyString
+  imei: 1
+  anual_price: 9.99
+  payment_number_of_quotas: 1
+  user: two
