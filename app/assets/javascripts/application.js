@@ -1,5 +1,4 @@
 //= require jquery3
-//= require turbolinks
 //= require bootstrap
 //= require admin/jquery.validate.min
 //= require admin/jquery.validate.pt-BR
